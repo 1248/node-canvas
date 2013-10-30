@@ -158,6 +158,9 @@ static cairo_status_t canvas_write_png(cairo_surface_t *surface, png_rw_ptr writ
         png_set_packswap(png);
 #endif
         break;
+#ifndef CAIRO_FORMAT_INVALID
+#define CAIRO_FORMAT_INVALID -1
+#endif
     case CAIRO_FORMAT_INVALID:
     case CAIRO_FORMAT_RGB16_565:
     default:
